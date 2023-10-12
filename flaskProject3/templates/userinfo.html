@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .{
+            background-color: #2f3947;
+        }
+
+    {#body{#}
+    {#    background-color: #435165;#}
+    {#    background-repeat: no-repeat;#}
+    {#    background-attachment: fixed;#}
+    {#    background-position: center;#}
+    {#    background-size: cover;#}
+    {#}#}
+    {##heading{#}
+    {#    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;#}
+    {#    color: rgb(255, 255, 255);#}
+    {#    margin-left: 32%;#}
+    {#    margin-top: 2%;#}
+    {#    font-weight: 900;#}
+    {#    font-size:50px;#}
+    {#    text-shadow: 0 0 10px #012226;#}
+    {#}#}
+    {#a{#}
+    {#    font-weight: 400;#}
+    {#    color: #076570;#}
+    {#}#}
+    {#a:hover{#}
+    {#    font-weight: bolder;#}
+    {#}#}
+    {#ul{#}
+    {#    margin-left: 35%;#}
+    {#    padding: 3%;#}
+    {#}#}
+    {#li{#}
+    {#    font-size: 30px;#}
+    {#}#}
+    {##logout{#}
+    {#    margin-left: 39%;#}
+    {#    margin-top: 15%;#}
+    {#}#}
+    </style>
+<title>User</title>
+</head>
+<body>
+    <p id="heading">User Information:</p>
+{#    <a href="{{ url_for('password') }}">Click here to Change Password</a></p>#}
+{#    <ul>#}
+{#    {% for book in curbooks %}#}
+{#        <p> <li>{{ email }}</li></p>#}
+{#         <p> <li>{{ first_name }}</li></p>#}
+{#         <p> <li>{{ last_name }}</li></p>#}
+{#         <p> <li>{{ gender }}</li></p>#}
+{#         <p> <li>{{ age }}</li></p>#}
+{#        <p>#}
+{#            <li>Home Address: {{ home_address['street_num'] }}, {{ home_address['street_name'] }}, {{ home_address_more_info['city'] }}, {{ home_address_more_info['county_name'] }}, {{ home_address_more_info['timezone'] }}, {{ home_address['zipcode'] }} </li>#}
+{#        </p>#}
+{#        <p>#}
+{#            <li>Billing Address: {{ billing_address['street_num'] }}, {{ billing_address['street_name'] }},{{ billing_address_more_info['city'] }}, {{ billing_address_more_info['county_name'] }}, {{ billing_address_more_info['timezone'] }}, {{ billing_address['zipcode'] }} </li>#}
+{#        </p>#}
+{#        <p>#}
+{#            <li>Last four digits of credit card number:  {{ credit_cards['credit_card_num'][-4:] }} </li>#}
+{#        </p>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+{#    <p id="logout"><a href="{{url_for('logout')}}">Click here</a> to logout !</p>#}
+<table border="1">
+    <tr>
+    <td> <li>{{ email }}</li></td>
+    </tr>
+     <tr>
+    <td><li>{{ first_name }}</li></td>
+    </tr>
+     <tr>
+    <td><li>{{ last_name }}</li></td>
+    </tr>
+    <tr>
+    <td> <li>{{ gender }}</li></td>
+    </tr>
+    <tr>
+    <td> <li>{{ age }}</li></td>
+    </tr>
+    <tr>
+    <td> <li>Home Address: {{ home_address['street_num'] }}, {{ home_address['street_name'] }}, {{ home_address_more_info['city'] }}, {{ home_address_more_info['county_name'] }}, {{ home_address_more_info['timezone'] }}, {{ home_address['zipcode'] }} }}</li></td>
+    </tr>
+    <tr>
+    <td> <li>Billing Address: {{ billing_address['street_num'] }}, {{ billing_address['street_name'] }},{{ billing_address_more_info['city'] }}, {{ billing_address_more_info['county_name'] }}, {{ billing_address_more_info['timezone'] }}, {{ billing_address['zipcode'] }} </li>
+    </tr>
+    <tr>
+    <td> <li>Last four digits of credit card number:  {{ credit_cards['credit_card_num'][-4:] }} </li>
+    </tr>
+</table>
+</body>
+</html>

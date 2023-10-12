@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='categories.css') }}">
+    <link rel="stylesheet" href="C:\Users\Kexi Chen\PycharmProjects\flaskProject3\static\categories.css">
+
+    <STYLE type="text/css">
+    H1 { text-align: center}
+
+    </STYLE>
+</head>
+<style>
+    img{
+        float: right;
+    }
+    li{
+        font-size:21px;
+    }
+</style>
+<body>
+
+<div class = "container2">
+
+    <table>
+    <tr>
+        <h1 style="color:white;font-size:40px ">Category</h1>
+    </tr>
+        <tr>
+            <td>
+
+<div class="container">
+  <div class="well">
+    <ul class="nav nav-list">
+    <li>
+      <label class="tree-toggler nav-header"> <i class='icon-plus-sign'></i>Root</label>
+      <ul class="nav nav-list">
+        <li>
+        {% for level1_child in categories['Root'] %}
+             <label class="tree-toggler nav-header"> <i class='icon-plus-sign'></i><a href="{{url_for('product')}}?category={{ level1_child }}">{{ level1_child }}</a></label>
+             <ul class="nav nav-list tree">
+
+                 {% for level2_child in categories[level1_child] %}
+                    <li>
+                      <label class="tree-toggler nav-header"> <i class='icon-plus-sign'></i><a href="{{url_for('product')}}?category={{ level2_child }}">{{ level2_child }}</a></label>
+                      <ul class="nav nav-list tree">
+
+                          {% for level3_child in categories[level2_child] %}
+                            <li><a href="{{url_for('product')}}?category={{ level3_child }}">{{ level3_child }}</a>
+                                <ul class="nav nav-list tree">
+
+                                    {% for level4_child in categories[level3_child] %}
+                                    <li><a href="{{url_for('product')}}?category={{ level4_child }}">{{ level4_child }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                            </li>
+                          {% endfor %}
+                      </ul>
+                    </li>
+                {% endfor %}
+              </ul>
+        {% endfor %}
+        </li>
+      </ul>
+    </li>
+    </ul>
+</div>
+
+            </td>
+
+
+            <td>
+        <img src="static/cimages/beauty products.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/clothing.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/phone.png" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/grocery.png" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/kitchen-tools.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/gardening.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/pets.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Sports & Outdoors.jfif" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Toys & Video Games.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Pharmacy.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/gardening.jpg" alt="beauty products" width="400" height="300">
+       <img src="static/cimages/beauty products.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/clothing.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Pharmacy.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/phone.png" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/grocery.png" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/kitchen-tools.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/gardening.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/pets.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Sports & Outdoors.jfif" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Toys & Video Games.jpg" alt="beauty products" width="400" height="300">
+        <img src="static/cimages/Pharmacy.jpg" alt="beauty products" width="400" height="300">
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+</body>
+
+
+
+</html>

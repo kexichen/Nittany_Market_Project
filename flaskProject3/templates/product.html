@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+#wrap {
+   width:1050px;
+   margin:10px;
+    height:200px;
+    margin-bottom: 25px;
+}
+#left_col {
+   float:left;
+   width:700px;
+}
+#right_col {
+   float:right;
+   width:300px;
+}
+</style>
+
+    <style>
+    body{
+        background-color: #435165;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+
+    ul{
+        {#font-size: 20px;#}
+    }
+
+    li{
+        font-size: 20px;
+        color: white;
+        margin-top: auto;
+        margin-left: 5%;
+        padding: 3%;
+        line-height:2px
+    }
+    img{
+        float:left;
+    }
+    </style>
+
+<body>
+{#    <ul>#}
+     <div id="wrap">
+            {% for product in products %}
+
+                <div id="wrap">
+                    <div id="left_col">
+                        <li>Product Name:{{ product['Product_Name'] }}</li>
+                        <li>Price:{{ product['Price'] }}</li>
+                        <li>Seller's Information:{{ product['Seller_Email'] }}</li>
+                    </div>
+                    <div id="right_col">
+                        <li><img src="/static/images/{{ product['Product_Name'] }}.jpg" width="200" height="200" alt="applewatch"/></li>
+                    </div>
+                </div>
+{#                <p>#}
+{#                        <li>Product Name:{{ product['Product_Name'] }}</li>#}
+{#                        <li>Price:{{ product['Price'] }}</li>#}
+{#                        <li>Seller's Information:{{ product['Seller_Email'] }}</li>#}
+{#                        <li><img src="/static/images/{{ product['Product_Name'] }}.jpg" width="250" height="210" alt="applewatch"/></li>#}
+{#                </p>#}
+            {% endfor %}
+     </div>
+{#    </ul>#}
+</body>
+</html>
